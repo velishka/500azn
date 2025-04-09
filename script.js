@@ -50,3 +50,12 @@ function typeWriter() {
   }
 }
 setTimeout(typeWriter, 1000);
+
+const button = document.getElementById('openBtn');
+const images = document.getElementById('imageContainer');
+
+button.addEventListener('click', () => {
+  images.classList.remove('hidden');
+  button.style.display = 'none';
+  startHeartAnimation(); // включаем анимацию сердечек
+});
