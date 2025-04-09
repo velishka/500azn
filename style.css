@@ -1,0 +1,151 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: #ffe6f0;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.container {
+  padding-top: 80px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 24px;
+  background-color: #ff4da6;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #e60073;
+}
+
+.hidden {
+  display: none;
+}
+
+#imageContainer {
+  margin-top: 30px;
+}
+
+#imageContainer img {
+  width: 300px;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  animation: fadeIn 1.5s ease-in;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#imageContainer img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.love-text {
+  font-size: 24px;
+  color: #ff3399;
+  margin-top: 20px;
+  font-style: italic;
+  animation: fadeIn 2s ease forwards;
+}
+
+.heart {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  transform: rotate(45deg);
+  animation: floatUp 4s linear infinite;
+  opacity: 0.8;
+  z-index: 999;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: inherit;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-800px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.petal {
+  position: fixed;
+  top: -50px;
+  width: 20px;
+  height: 20px;
+  background-image: url('https://i.ibb.co/0q4R6nk/petal.png');
+  background-size: cover;
+  animation: fall 5s linear infinite;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 998;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.star {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 997;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
